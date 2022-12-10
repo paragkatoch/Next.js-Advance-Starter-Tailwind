@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+	/**
+		classes
+	**/
+
+	.screenPadding {
+		@apply px-[30px] mds:px-[50px] lgs:px-[70px];
+	}
+	.screenMargin {
+		@apply mx-[30px] mds:mx-[50px] lgs:mx-[70px];
+	}
+	.lock-scroll {
+		@apply h-screen w-screen overflow-y-hidden mds:h-fit mds:w-full mds:overflow-y-auto;
+	}
+	.scrollbar-hide {
+		-ms-overflow-style: none; /* IE and Edge */
+		scrollbar-width: none; /* Firefox */
+
+		/* For Webkit-based browsers (Chrome, Safari and Opera) */
+		&::-webkit-scrollbar {
+			display: none;
+		}
+	}
+	.aboveDesktop {
+		@apply lg:mx-auto lg:max-w-[1440px]  lg:overflow-x-hidden;
+	}
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+
+	// Font and click adjustments
+
+	-webkit-tap-highlight-color: transparent;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+
+	font-synthesis: none;
+	font-feature-settings: "kern";
+	-moz-font-feature-settings: "kern";
+}
+
+html,
+body {
+	margin: 0 auto;
+	max-width: 1440px;
+	overflow-x: hidden;
+	scroll-behavior: smooth;
+
+	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+		Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+
+	a {
+		color: inherit;
+		text-decoration: none;
+	}
+
+	button {
+		border: none;
+		outline: none;
+		background: transparent;
+		cursor: pointer;
+
+		&:focus,
+		&:focus-visible,
+		&:focus-within {
+			box-shadow: none;
+			outline: none;
+		}
+	}
+
+	input:-webkit-autofill,
+	input:-webkit-autofill:hover,
+	input:-webkit-autofill:focus,
+	input:-webkit-autofill:active {
+		-webkit-box-shadow: 0 0 0 1000px white inset !important;
+		box-shadow: 0 0 0 1000px white inset !important;
+	}
+}
